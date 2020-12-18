@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom'
 
 const Statistic = (props) => {
   return (
-    <p>
-      {props.text} {props.stat}
-    </p>
+    <tr>
+      <td>{props.text}</td>
+      <td>{props.stat}</td>
+    </tr>
   )
 }
 
@@ -21,14 +22,16 @@ const Statistics = (props) => {
   }
 
   return (
-    <>
-      <Statistic text='good' stat={props.stats.good}/>
-      <Statistic text='neutral' stat={props.stats.neutral}/>
-      <Statistic text='bad' stat={props.stats.bad}/>
-      <Statistic text='all' stat={total} />
-      <Statistic text='average' stat={average} />
-      <Statistic text='positive' stat={positive.toString() + ' %'} />
-    </>
+    <table>
+      <tbody>
+        <Statistic text='good' stat={props.stats.good}/>
+        <Statistic text='neutral' stat={props.stats.neutral}/>
+        <Statistic text='bad' stat={props.stats.bad}/>
+        <Statistic text='all' stat={total} />
+        <Statistic text='average' stat={average} />
+        <Statistic text='positive' stat={positive.toString() + ' %'} />
+      </tbody>
+    </table>
   )
 }
 
