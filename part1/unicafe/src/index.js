@@ -9,6 +9,23 @@ const StatLine = (props) => {
   )
 }
 
+const Statistics = (props) => {
+  const total = props.stats.good + props.stats.neutral + props.stats.bad
+  const average = (props.stats.good - props.stats.bad) / total
+  const positive = props.stats.good / total * 100
+
+  return (
+    <>
+      <StatLine text='good' stat={props.stats.good}/>
+      <StatLine text='neutral' stat={props.stats.neutral}/>
+      <StatLine text='bad' stat={props.stats.bad}/>
+      <StatLine text='all' stat={total} />
+      <StatLine text='average' stat={average} />
+      <StatLine text='positive' stat={positive.toString() + ' %'} />
+    </>
+  )
+}
+
 const Button = (props) => {
   return (
     <button onClick={props.handleClick}>
@@ -19,17 +36,36 @@ const Button = (props) => {
 
 const App = () => {
   // save clicks of each button to its own state
-  const [good, setGood] = useState(0)
-  const [neutral, setNeutral] = useState(0)
-  const [bad, setBad] = useState(0)
+  const [stats, setStats] = useState({
+    good: 0,
+    neutral: 0,
+    bad: 0
+  })
 
-  const total = good + neutral + bad
-  const average = (good - bad) / total
-  const positive = good / total * 100
+  const increaseGood = () => {
+    const newStats = {
+      ...stats,
+      good: stats.good + 1
+    }
+    setStats(newStats)
+  }
 
-  const increaseGood = () => setGood(good + 1)
-  const increaseNeutral = () => setNeutral(neutral + 1)
-  const increaseBad = () => setBad(bad + 1)
+  const increaseNeutral = () => {
+    const newStats = {
+      ...stats,
+      neutral: stats.neutral + 1
+    }
+    setStats(newStats)
+  }
+
+  const increaseBad = () => {
+    const newStats = {
+      ...stats,
+      bad: stats.bad + 1
+    }
+    setStats(newStats)
+  }
+
 
   return (
     <div>
@@ -38,12 +74,7 @@ const App = () => {
       <Button text='neutral' handleClick={increaseNeutral} />
       <Button text='bad' handleClick={increaseBad} />
       <h1>statistics</h1>
-      <StatLine text='good' stat={good}/>
-      <StatLine text='neutral' stat={neutral}/>
-      <StatLine text='bad' stat={bad}/>
-      <StatLine text='all' stat={total} />
-      <StatLine text='average' stat={average} />
-      <StatLine text='positive' stat={positive.toString() + ' %'} />
+      <Statistics stats={stats}/>
     </div>
   )
 }
