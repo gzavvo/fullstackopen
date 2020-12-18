@@ -14,6 +14,12 @@ const Statistics = (props) => {
   const average = (props.stats.good - props.stats.bad) / total
   const positive = props.stats.good / total * 100
 
+  if (total === 0) {
+    return (
+      <p>No feedback given</p>
+    )
+  }
+
   return (
     <>
       <StatLine text='good' stat={props.stats.good}/>
