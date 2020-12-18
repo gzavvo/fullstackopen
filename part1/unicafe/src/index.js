@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-const StatLine = (props) => {
+const Statistic = (props) => {
   return (
     <p>
       {props.text} {props.stat}
@@ -22,12 +22,12 @@ const Statistics = (props) => {
 
   return (
     <>
-      <StatLine text='good' stat={props.stats.good}/>
-      <StatLine text='neutral' stat={props.stats.neutral}/>
-      <StatLine text='bad' stat={props.stats.bad}/>
-      <StatLine text='all' stat={total} />
-      <StatLine text='average' stat={average} />
-      <StatLine text='positive' stat={positive.toString() + ' %'} />
+      <Statistic text='good' stat={props.stats.good}/>
+      <Statistic text='neutral' stat={props.stats.neutral}/>
+      <Statistic text='bad' stat={props.stats.bad}/>
+      <Statistic text='all' stat={total} />
+      <Statistic text='average' stat={average} />
+      <Statistic text='positive' stat={positive.toString() + ' %'} />
     </>
   )
 }
