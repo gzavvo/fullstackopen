@@ -10,8 +10,10 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
 App	App.js	/^function App() {$/;"	f
-Filter	components/Filter.js	/^const Filter = ({ value, onChange }) => {$/;"	C
+Filter	components/Filter.js	/^const Filter = ({ newFilter, handleFilterChange }) => {$/;"	C
+Person	components/Person.js	/^const Person = ({ person }) => {$/;"	C
 PersonForm	components/PersonForm.js	/^const PersonForm = (props) => {$/;"	C
+Persons	components/Persons.js	/^const Persons = ({ persons, newFilter }) => {$/;"	C
 name	App.js	/^      name: newName,$/;"	p	class:event.preventDefault
 number	App.js	/^      number: newNumber$/;"	p	class:event.preventDefault
 preventDefault	App.js	/^    event.preventDefault()$/;"	c	class:event

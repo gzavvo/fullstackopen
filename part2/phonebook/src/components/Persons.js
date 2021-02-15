@@ -7,7 +7,7 @@ const Persons = ({ persons, newFilter }) => {
         {
           persons
             .filter(person => person.name.toLowerCase().includes(newFilter.toLowerCase()))
-            .map(person => <Person person={person} />)
+            .map(person => <Person key={person.id} person={person} />)
         }
       </tbody>
     </table>
