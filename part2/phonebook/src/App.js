@@ -18,6 +18,8 @@ function App() {
       })
   }, [])
 
+  console.log(persons)
+
   const addPerson = (event) => {
     event.preventDefault()
     if (persons.find(person => person.name === newName)) {
@@ -29,6 +31,7 @@ function App() {
     const personObject = {
       name: newName,
       number: newNumber,
+      id: persons.length + 1
     }
     personService
       .create(personObject)
@@ -37,6 +40,17 @@ function App() {
         setNewName('')
         setNewNumber('')
       })
+  }
+
+  const removePersonOf = (id) => {
+    const person = persons.find((person) => person.id === id)
+    if (window.confirm(`Delete ${person.name}?`)) {
+      personService
+        .remove(id)
+        .then(response => {
+          setPersons(persons.filter(n => n.id !== id))
+        })
+    }
   }
 
   const handleNameChange = (event) => {
@@ -70,6 +84,7 @@ function App() {
       <Persons 
         persons={persons} 
         newFilter={newFilter}
+        removePersonOf={removePersonOf}
       />
     </div>
   );

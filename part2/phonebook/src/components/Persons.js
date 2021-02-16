@@ -1,12 +1,20 @@
 import Person from './Person'
 
-const Persons = ({ persons, newFilter }) => {
+const Persons = ({ persons, newFilter, removePersonOf }) => {
   return (
     <div>
       {
         persons
           .filter(person => person.name.toLowerCase().includes(newFilter.toLowerCase()))
-          .map(person => <Person key={person.name} person={person} />)
+          .map(person => {
+            return (
+              <Person 
+                key={person.name} 
+                person={person}
+                removePersonOf={removePersonOf}
+              />
+            )
+          })
       }
     </div>
   )
