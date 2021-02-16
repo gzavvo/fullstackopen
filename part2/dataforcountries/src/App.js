@@ -20,6 +20,10 @@ const App = () => {
     setNewFilter(event.target.value)
   }
 
+  const handleShow = (event) => {
+    setNewFilter(event.target.value)
+  }
+
   return (
     <div>
       <Filter 
@@ -29,6 +33,7 @@ const App = () => {
       <CountriesList
         countries={countries}
         newFilter={newFilter}
+        handleShow={handleShow}
       />
     </div>
   )

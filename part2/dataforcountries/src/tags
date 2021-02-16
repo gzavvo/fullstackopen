@@ -10,9 +10,13 @@
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210110.0/
 App	App.js	/^const App = () => {$/;"	C
-CountriesList	components/CountriesList.js	/^const CountriesList = ({ countries, newFilter }) => {$/;"	C
+CountriesList	components/CountriesList.js	/^const CountriesList = ({ countries, newFilter, handleShow }) => {$/;"	C
 Country	components/Country.js	/^const Country = ({ country }) => {$/;"	C
 Filter	components/Filter.js	/^const Filter = ({ newFilter, handleFilterChange }) => {$/;"	C
+Weather	components/Weather.js	/^const Weather = ({ capital }) => {$/;"	C
+api_key	components/Weather.js	/^  const api_key = process.env.REACT_APP_API_KEY$/;"	C
 filteredCountries	components/CountriesList.js	/^  const filteredCountries = countries$/;"	C
+handleShow	App.js	/^  const handleShow = (event) => {$/;"	C
 setCountries	App.js	/^  const [countries, setCountries] = useState([])$/;"	C
 setNewFilter	App.js	/^  const [newFilter, setNewFilter] = useState('')$/;"	C
+setWeatherData	components/Weather.js	/^  const [weatherData, setWeatherData] = useState(null)$/;"	C
