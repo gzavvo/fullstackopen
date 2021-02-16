@@ -29,6 +29,11 @@
       "name": "Marty McFly",
       "number": "12346375468",
       "id": 6
+    },
+    {
+      "name": "Merlin",
+      "number": "4567",
+      "id": 7
     }
   ]
 }
