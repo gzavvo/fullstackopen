@@ -1,24 +1,49 @@
 {
   "persons": [
-    { 
-      "name": "Arto Hellas", 
+    {
+      "name": "Arto Hellas",
       "number": "040-123456",
-      "id": 1 
+      "id": 1
     },
-    { 
-      "name": "Ada Lovelace", 
+    {
+      "name": "Ada Lovelace",
       "number": "39-44-123456",
       "id": 2
     },
-    { 
-      "name": "Dan Abramov", 
+    {
+      "name": "Dan Abramov",
       "number": "12-43-234345",
       "id": 3
     },
-    { 
-      "name": "Mary Poppendieck", 
+    {
+      "name": "Mary Poppendieck",
       "number": "39-23-6423122",
       "id": 4
+    },
+    {
+      "name": "bépo",
+      "number": "\"«»(",
+      "id": 5
+    },
+    {
+      "name": "Xavier Barral",
+      "number": "83754899",
+      "id": 6
+    },
+    {
+      "name": "Martin Bidule",
+      "number": "123412341324",
+      "id": 7
+    },
+    {
+      "name": "L’Autre",
+      "number": "1BÉPO",
+      "id": 8
+    },
+    {
+      "name": ":AUIEAUI",
+      "number": "1234132(",
+      "id": 9
     }
   ]
 }
