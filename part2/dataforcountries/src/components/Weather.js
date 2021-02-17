@@ -9,7 +9,10 @@ const Weather = ({ capital }) => {
     appid: api_key,
     units: "metric"
   }
-  const [weatherData, setWeatherData] = useState(null)
+  const [weatherData, setWeatherData] = useState({})
+  const [temperature, setTemperature] = useState(0)
+  const [windSpeed, setWindSpeed] = useState(0)
+  const [weatherIcon, setWeatherIcon] = useState('')
 
   useEffect(() => {
     axios
@@ -17,20 +20,23 @@ const Weather = ({ capital }) => {
       .then(response => {
         console.log('response.data: ', response.data)
         setWeatherData(response.data)
-        console.log('weatherData', weatherData)
+        setTemperature(response.data.main.temp)
+        setWindSpeed(response.data.wind.speed)
+        setWeatherIcon(response.data.weather[0].icon)
       })
-  }, [])
+  }, [capital])
 
+  const srcImg=`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
 
   return (
     <div>
       <div>
-      temperature: {weatherData.main.temp}°C
+      temperature: {temperature}°C
       </div>
       <div>
-        wind: {weatherData.wind.speed} km/h
+        wind: {windSpeed} km/h
       </div>
-      <img src="http://openweathermap.org/img/wn/{weatherData.weather.icon}" alt="current weather icon" />
+      <img src={srcImg} alt="current weather icon" />
     </div>
   )
 }
