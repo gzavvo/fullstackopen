@@ -63,6 +63,11 @@ function App() {
           setNotificationMessage(`Added ${returnedPerson.name}`)
           setTimeout(() => setNotificationMessage(null), 3000)
         })
+        .catch(error => {
+          console.log(error.response.data)
+          setAlertMessage(error.response.data.error)
+          setTimeout(() => setNotificationMessage(null), 3000)
+        })
     }
   }
 
