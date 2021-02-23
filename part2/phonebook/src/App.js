@@ -52,12 +52,11 @@ function App() {
       const personObject = {
         name: newName,
         number: newNumber,
-        id: persons.length + 1
       }
       personService
         .create(personObject)
         .then(returnedPerson => {
-          setPersons(persons.concat(personObject))
+          setPersons(persons.concat(returnedPerson))
           setNewName('')
           setNewNumber('')
           setNotificationMessage(`Added ${returnedPerson.name}`)
